@@ -21,6 +21,7 @@ html, body {
   filter: drop-shadow(0 0 3px #333);
 }
 
+/* TALLO */
 .wrapper .plant {
   height: 150px;
   width: 6px;
@@ -34,6 +35,8 @@ html, body {
   transform-origin: center bottom;
   animation: lean 3s 0.5s infinite;
 }
+
+/* HOJAS - SE MANTIENEN IGUAL */
 .wrapper .plant .leaf__one {
   height: 30px;
   width: 30px;
@@ -71,42 +74,54 @@ html, body {
   border-bottom-left-radius: 100%;
   transform: rotateZ(-67.5deg);
 }
+
+/* CONTENEDOR DE LA FLOR */
 .wrapper .plant .flower {
   height: 80px;
   width: 80px;
   position: absolute;
-  top: -80px;
-  left: -40px;
+  top: -75px; /* Ajustado para el tulipán */
+  left: -37px;
   animation: rotate 3s 0.5s infinite;
 }
+
+/* PÉTALOS LATERALES DEL TULIPÁN (Reemplaza los pétalos del girasol) */
 .wrapper .plant .flower::before {
   content: "";
-  height: 40px;
+  height: 80px;
   width: 40px;
   position: absolute;
-  top: -30px;
-  left: 20px;
-  background: #ffff00;
-  border-radius: 100%;
-  z-index: -1;
-  box-shadow: -37px 15px #ffff00, -47px 54px #ffff00, -26px 89px #ffff00, 15px 93px #ffff00, 43px 63px #ffff00, 36px 21px #ffff00;
+  top: -5px;
+  left: -2px;
+  background: #ff4d6d; /* Rosa fuerte */
+  border-radius: 50% 50% 50% 50% / 80% 80% 20% 20%;
+  z-index: 1;
+  transform: rotate(-15deg);
+  box-shadow: 45px 12px 0 0 #ff4d6d; /* Segundo pétalo lateral */
 }
+
+/* CUERPO CENTRAL DEL TULIPÁN (Donde está la cara) */
 .wrapper .plant .flower .head {
-  height: 80px;
-  width: 80px;
+  height: 85px;
+  width: 70px;
   position: absolute;
-  border-radius: 100%;
-  background: #E8AD17;
+  top: 0;
+  left: 5px;
+  border-radius: 50% 50% 50% 50% / 75% 75% 25% 25%;
+  background: #ff758f; /* Rosa claro */
   box-shadow: 0 0 3px #333;
   z-index: 10;
+  overflow: hidden;
 }
+
+/* CARITA - SE MANTIENE EL DISEÑO ORIGINAL */
 .wrapper .plant .flower .head .face {
   height: 26.6666666667px;
   width: 26.6666666667px;
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 10px;
+  bottom: 20px; /* Ajustada un poco por la forma del tulipán */
   margin: auto;
   border: 4px transparent solid;
   border-bottom: 4px black solid;
@@ -132,6 +147,8 @@ html, body {
   top: -16px;
   right: 8px;
 }
+
+/* MACETA - SE MANTIENE IGUAL */
 .wrapper .pot {
   height: 80px;
   width: 60px;
@@ -180,6 +197,7 @@ html, body {
   right: -30px;
   border-right-color: transparent;
 }
+
 .wrapper .text {
   width: 360px;
   position: absolute;
@@ -198,64 +216,23 @@ html, body {
   bottom: -40px;
 }
 
+/* ANIMACIONES - SE MANTIENEN IGUAL */
 @keyframes lean {
-  0% {
-    transform: rotate(0deg);
-  }
-  12.5% {
-    transform: rotate(-22.5deg);
-  }
-  25% {
-    transform: rotate(0deg);
-  }
-  50% {
-    transform: rotate(0deg);
-  }
-  62.5% {
-    transform: rotate(22.5deg);
-  }
-  75% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
+  0%, 25%, 50%, 75%, 100% { transform: rotate(0deg); }
+  12.5% { transform: rotate(-22.5deg); }
+  62.5% { transform: rotate(22.5deg); }
 }
 @keyframes rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  12.5% {
-    transform: rotate(22.5deg);
-  }
-  25% {
-    transform: rotate(0deg);
-  }
-  50% {
-    transform: rotate(0deg);
-  }
-  62.5% {
-    transform: rotate(-22.5deg);
-  }
-  75% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
+  0%, 25%, 50%, 75%, 100% { transform: rotate(0deg); }
+  12.5% { transform: rotate(22.5deg); }
+  62.5% { transform: rotate(-22.5deg); }
 }
-
 
 .download-section {
   text-align: center;
   margin-top: 485px;
   position: relative;
 }
-
-.download-section a {
-  text-decoration: none;
-}
-
 .download-section button {
   background-color: #fae2bf; 
   color: #000; 
@@ -268,7 +245,6 @@ html, body {
   transition: 0.3s;
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
 }
-
 .download-section button:hover {
   background-color: #e5c8a0;
   transform: scale(1.05);
